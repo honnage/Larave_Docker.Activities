@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\ParticipantModel;
 use DB;
-use Illuminate\View\Component;
+
 
 class ParticipantController extends Controller
 {
@@ -70,7 +70,10 @@ class ParticipantController extends Controller
      */
     public function show($id)
     {
-        $participants = ParticipantModel::find($id);
+        // $participants = ParticipantModel::find($id);
+        // return view('participants.show',compact('participants'));
+
+        $participants = DB::table('Participants')->get();
         return view('participants.show',compact('participants'));
     }
 
