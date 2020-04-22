@@ -40,7 +40,7 @@
                         <td>
                             <center>
                             <form action="{{ route('participants.destroy',$participant->id)	}}" method="POST">
-                                <a class="btn btn-primary" href="{{ route('participants.edit',$participant->id) }}" >Show</a>
+                                <a class="btn btn-primary" href="{{ route('participants.show',$participant->id) }}" >Show</a>
                                 <a class="btn btn-warning" href="{{ route('participants.edit',$participant->id) }}" >Edit</a>
 
                                 @csrf

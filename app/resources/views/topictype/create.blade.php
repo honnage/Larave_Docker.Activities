@@ -11,7 +11,7 @@
                 <a href="{{ route('topic.index') }}"> หัวข้อประเภทงานทั้งหมด </a>&nbsp;&nbsp;
             </div>
 
-            <form action=" {{ route('topic.store') }} " method="post" enctype="multipart/form-data">
+            <form action=" {{ route('topic.store') }} " method="post" >
                 {{csrf_field()}}
 
                 <div class="form-group my-3">

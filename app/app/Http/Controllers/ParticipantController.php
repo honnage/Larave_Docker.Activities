@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\ParticipantModel;
 use DB;
+use Illuminate\View\Component;
 
 class ParticipantController extends Controller
 {
@@ -69,7 +70,8 @@ class ParticipantController extends Controller
      */
     public function show($id)
     {
-        //
+        $participants = ParticipantModel::find($id);
+        return view('participants.show',compact('participants'));
     }
 
     /**
@@ -80,7 +82,12 @@ class ParticipantController extends Controller
      */
     public function edit($id)
     {
-        //
+        // $participants = ParticipantModel::find($id);
+        // return view('participants/edit',['participants'=>$participants]);
+        $participants = DB::table("Participants")
+        ->where('id','=',$id)
+        ->get();
+        return view('participants/edit',compact('participants'));
     }
 
     /**
@@ -92,7 +99,28 @@ class ParticipantController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'fname'=>'required',
+            'lname'=>'required',
+            'gender'=>'required',
+            'phone'=>'required',
+            'email'=>'required',
+            'address'=>'required',
+            'zip'=>'required',
+        ]);
+        DB::table('Participants')
+            ->where('id','=',$id)
+            ->update([
+            'fname' => $request->fname,
+            'lname' => $request->lname,
+            'gender' => $request->gender,
+            'phone' => $request->phone,
+            'email' => $request->email,
+            'address' => $request->address,
+            'zip' => $request->zip,
+
+        ]);
+        return redirect('participants');
     }
 
     /**
@@ -103,6 +131,9 @@ class ParticipantController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $participants = ParticipantModel::find($id);
+        $participants->delete();
+        return redirect()
+        ->route('participants.index');
     }
 }
