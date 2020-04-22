@@ -15,7 +15,7 @@
                 {{csrf_field()}}
 
                 <div class="form-group my-3">
-                    <label for="Name_TH">&nbsp; ประเภทกิจกรรม <label style="color:red;"> * </label></label>
+                    <label>&nbsp; ประเภทกิจกรรม <label style="color:red;"> * </label></label>
                     <input type="text" class="form-control" name="name" id="name" placeholder="เช่น สัมมนา ">
                 </div>
 

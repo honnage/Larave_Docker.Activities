@@ -15,17 +15,17 @@
                 {{csrf_field()}}
 
                 <div class="form-group my-3">
-                    <label for="Name_TH">&nbsp; ชื่อ <label style="color:red;"> * </label></label>
+                    <label>&nbsp; ชื่อ <label style="color:red;"> * </label></label>
                     <input type="text" class="form-control" name="fname" id="fname" placeholder="ชื่อ ">
                 </div>
 
                 <div class="form-group my-3">
-                    <label for="Name_TH">&nbsp; นามสกุล <label style="color:red;"> * </label></label>
+                    <label>&nbsp; นามสกุล <label style="color:red;"> * </label></label>
                     <input type="text" class="form-control" name="lname" id="lname" placeholder="นามสกุล ">
                 </div>
 
                 <div class="form-group my-3">
-                    <label for="Name_TH">&nbsp; เพศ <label style="color:red;"> * </label></label>
+                    <label>&nbsp; เพศ <label style="color:red;"> * </label></label>
                     <div class = "">
                         <select class="form-control " name="gender">
                             <option value="">โปรดกรอกเพศของท่าน</option>
@@ -36,25 +36,25 @@
                 </div>
 
                 <div class="form-group my-3">
-                    <label for="Name_TH">&nbsp; เบอร์โทรศัพท์ <label style="color:red;"> * </label></label>
+                    <label>&nbsp; เบอร์โทรศัพท์ <label style="color:red;"> * </label></label>
                     <input type="text" class="form-control" name="phone" id="phone" placeholder="เบอร์โทรศัพท์ ">
                 </div>
 
 
                 <div class="form-group my-3">
-                    <label for="Name_TH">&nbsp; อีเมล <label style="color:red;"> * </label></label>
+                    <label>&nbsp; อีเมล <label style="color:red;"> * </label></label>
                     <input type="text" class="form-control" name="email" id="email" placeholder="อีเมล ">
                 </div>
 
 
                 <div class="form-group my-3">
-                    <label for="Name_TH">&nbsp; ที่อยู่ <label style="color:red;"> * </label></label>
+                    <label>&nbsp; ที่อยู่ <label style="color:red;"> * </label></label>
                     <input type="text" class="form-control" name="address" id="address" placeholder="ที่อยู่ ">
                 </div>
 
 
                 <div class="form-group my-3">
-                    <label for="Name_TH">&nbsp; รหัสไปรษณีย์ <label style="color:red;"> * </label></label>
+                    <label>&nbsp; รหัสไปรษณีย์ <label style="color:red;"> * </label></label>
                     <input type="text" class="form-control" name="zip" id="zip" placeholder="รหัสไปรษณีย์  ">
                 </div>
 

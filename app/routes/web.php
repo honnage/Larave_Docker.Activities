@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 Route::resource('/topic', 'TopicTypeController');
 Route::resource('/participants', 'ParticipantController');
+Route::resource('/activity', 'ActivityController');
 
 
 Route::get('/', function () {

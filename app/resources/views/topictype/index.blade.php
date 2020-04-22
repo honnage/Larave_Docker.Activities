@@ -22,7 +22,6 @@
                     <thead>
                         <th><center>#ID</center></th>
                         <th><center>ชื่อหัวข้อ</center></th>
-                        <th><center>จำนวนรายการ</center></th>
                         <th><center>ดำเนินการ</center></th>
                     </thead>
                     @foreach($topictype as $type)
@@ -30,7 +29,6 @@
                     <tr>
                         <td>{{ $type->id}}</td>
                         <td>{{ $type->name }}</td>
-                        <td> </td>
 
                         <td>
                             <center>
