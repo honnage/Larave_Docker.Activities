@@ -51,7 +51,6 @@ class ActivityController extends Controller
             'EventDate'=>'required',
             'StartTime'=>'required',
             'Endtime'=>'required',
-
             'id_TopicType'=>'required',
             'id_Participants'=>'required',
         ]);
@@ -77,7 +76,13 @@ class ActivityController extends Controller
      */
     public function show($id)
     {
-        //
+        $activity = DB::table('Activity')
+        ->join('TopicType','TopicType.id','=','Activity.id_TopicType')
+        ->join('Participants','Participants.id','=','Activity.id_Participants')
+        ->select('*')
+        ->where('Activity.id' ,'=',$id)
+        ->get();
+        return view('activity.show',compact('activity'));
     }
 
     /**
@@ -88,7 +93,21 @@ class ActivityController extends Controller
      */
     public function edit($id)
     {
-        //
+        $topictype = TopicTypeModel::orderBy('id')->get();
+        $participants = ParticipantModel::orderBy('id')->get();
+        // $activity = DB::table("Activity")
+        // ->where('id','=',$id)
+        // ->get();
+        // return view('activity/edit',compact('activity','topictype','participants'));
+
+        $activity = DB::table('Activity')
+        ->join('TopicType','TopicType.id','=','Activity.id_TopicType')
+        ->join('Participants','Participants.id','=','Activity.id_Participants')
+        ->select('*')
+        ->where('Activity.id' ,'=',$id)
+        ->get();
+        return view('activity.edit',compact('activity','topictype','participants'));
+
     }
 
     /**
@@ -100,7 +119,30 @@ class ActivityController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'activity'=>'required',
+            'description'=>'required',
+            'number'=>'required',
+            'EventDate'=>'required',
+            'StartTime'=>'required',
+            'Endtime'=>'required',
+            'id_TopicType'=>'required',
+            'id_Participants'=>'required',
+        ]);
+            DB::table('Activity')
+            ->where('id','=',$id)
+            ->update([
+            'activity' => $request->activity,
+            'description' => $request->description,
+            'number' => $request->number,
+            'EventDate' => $request->EventDate,
+            'StartTime' => $request->StartTime,
+            'Endtime' => $request->Endtime,
+            'id_TopicType' => $request->id_TopicType,
+            'id_Participants' => $request->id_Participants,
+
+        ]);
+        return redirect('activity');
     }
 
     /**
