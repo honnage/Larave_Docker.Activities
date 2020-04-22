@@ -38,7 +38,16 @@ class TopicTypeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $topictype = new TopicTypeModel;
+
+        $request->validate([
+            'name'=>'required',
+        ]);
+
+        $topictype->name = $request->name;
+
+        $topictype->save();
+        return redirect('topic');
     }
 
     /**
@@ -60,7 +69,12 @@ class TopicTypeController extends Controller
      */
     public function edit($id)
     {
-        //
+        $topictype = DB::table("TopicType")
+        ->where('id','=',$id)
+        ->get();
+        return view('topictype/edit',compact('topictype'));
+
+
     }
 
     /**
@@ -72,7 +86,17 @@ class TopicTypeController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name'=>'required',
+        ]);
+        DB::table('TopicType')
+            ->where('id','=',$id)
+            ->update([
+            'name' => $request->name,
+
+        ]);
+
+        return redirect('topic');
     }
 
     /**
@@ -83,6 +107,7 @@ class TopicTypeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        DB::table('TopicType')->where('id','=',$id)->delete();
+        return redirect('topic');
     }
 }

@@ -12,7 +12,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::resource('TopicType', 'TopicTypeController');
+Route::resource('topic', 'TopicTypeController');
+Route::resource('participants', 'ParticipantController');
+
 
 Route::get('/', function () {
     return view('welcome');

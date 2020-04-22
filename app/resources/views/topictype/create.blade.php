@@ -8,10 +8,10 @@
 
         <div class="table-responsive">
             <div class="card-header">เพื่มประเภทกิจกรรม &nbsp;&nbsp;
-                <a href=""> ฝากเงิน </a>&nbsp;&nbsp;
+                <a href="{{ route('topic.index') }}"> หัวข้อประเภทงานทั้งหมด </a>&nbsp;&nbsp;
             </div>
 
-            <form action=" " method="post" enctype="multipart/form-data">
+            <form action=" {{ route('topic.store') }} " method="post" enctype="multipart/form-data">
                 {{csrf_field()}}
 
                 <div class="form-group my-3">

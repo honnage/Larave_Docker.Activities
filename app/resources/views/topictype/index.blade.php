@@ -2,10 +2,12 @@
 @extends('layouts.app')
 
 @section('content')
+
+
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
-
         <div class="card">
             <div class="card-header">หัวข้อประเภทงาน &nbsp;&nbsp;
             {{-- <a href="{{ route('transfers.create') }}"> โอนเงิน </a>&nbsp;&nbsp;
@@ -16,7 +18,7 @@
 
                 <a  class="btn btn-success mr-2 "
                     style="position:absolute ; right:0 ; top:5px"
-                    href="{{ route('TopicType.create') }}" >เพิ่มหัวข้อ
+                    href="{{ route('topic.create') }}" >เพิ่มหัวข้อ
                 </a>
             </div>
         @csrf
@@ -34,9 +36,20 @@
                     <tbody>
                     <tr>
                         <td>{{ $type->id}}</td>
+                        <td>{{ $type->name }}</td>
+                        <td> </td>
 
+                        <td>
+                            <center>
+                            <form action="{{ route('topic.destroy',$type->id)	}}" method="POST">
+                                <a class="btn btn-warning" href="{{ route('topic.edit',$type->id) }}" >Edit</a>
 
-
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger" >Delete</button>
+                            </form>
+                            </center>
+                        </td>
 
 
                     </tr>
