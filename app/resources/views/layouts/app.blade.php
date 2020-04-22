@@ -35,8 +35,10 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('กกก') }}</a>
-                            {{-- เมนูด้านบน --}}
+                            <a class="nav-link" href="/participants">{{ __('ข้อมูลผู้ใช้') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/topic">{{ __('หัวข้อกิจกรรม') }}</a>
                         </li>
                     </ul>
 

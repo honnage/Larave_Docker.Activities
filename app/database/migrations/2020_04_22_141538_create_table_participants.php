@@ -20,6 +20,7 @@ class CreateTableParticipants extends Migration
             $table->string('gender');
             $table->string('phone');
             $table->string('email');
+            $table->string('address');
             $table->string('zip');
             $table->timestamps();
         });

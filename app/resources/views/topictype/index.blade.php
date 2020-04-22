@@ -1,8 +1,5 @@
-
 @extends('layouts.app')
-
 @section('content')
-
 
 
 <div class="container">
@@ -10,11 +7,7 @@
         <div class="col-md-12">
         <div class="card">
             <div class="card-header">หัวข้อประเภทงาน &nbsp;&nbsp;
-            {{-- <a href="{{ route('transfers.create') }}"> โอนเงิน </a>&nbsp;&nbsp;
 
-            <a href="{{ route('deposit.create') }}"> ฝากเงิน </a>&nbsp;&nbsp;
-            <a href="{{ route('withdraw.create') }}"> ถอนเงิน </a>&nbsp;&nbsp;
-            <a href="{{ route('calculaterate.create') }}"> คิดดอกเบี้ย </a>&nbsp;&nbsp; --}}
 
                 <a  class="btn btn-success mr-2 "
                     style="position:absolute ; right:0 ; top:5px"

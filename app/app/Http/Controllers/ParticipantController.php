@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\ParticipantModel;
+use DB;
 
 class ParticipantController extends Controller
 {
@@ -13,7 +15,8 @@ class ParticipantController extends Controller
      */
     public function index()
     {
-        //
+        $participants =  ParticipantModel::all();
+        return view('participants.index',compact('participants'));
     }
 
     /**
@@ -23,7 +26,8 @@ class ParticipantController extends Controller
      */
     public function create()
     {
-        //
+        $participants = DB::table('Participants')->get();
+        return view('participants.create',compact('participants'));
     }
 
     /**
@@ -34,7 +38,27 @@ class ParticipantController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $participants = new ParticipantModel;
+
+        $request->validate([
+            'fname'=>'required',
+            'lname'=>'required',
+            'gender'=>'required',
+            'phone'=>'required',
+            'email'=>'required',
+            'address'=>'required',
+            'zip'=>'required',
+        ]);
+        $participants->fname = $request->fname ;
+        $participants->lname = $request->lname ;
+        $participants->gender = $request->gender ;
+        $participants->phone = $request->phone ;
+        $participants->email = $request->email ;
+        $participants->address = $request->address ;
+        $participants->zip = $request->zip ;
+
+        $participants->save();
+        return redirect('participants');
     }
 
     /**
