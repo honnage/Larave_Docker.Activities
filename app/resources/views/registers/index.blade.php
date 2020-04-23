@@ -14,7 +14,7 @@
                         <a class="btn btn-outline-secondary col-sm-2" style="background: #5BBDC8; color: white" href="{{ route('participants.index') }}" >ผู้เข้าร่วมกิจกรรม</a>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12">
-                        <div class="card-header"><strong>ลงทะเบียนเข้าร่วมกิยกรรม</strong> &nbsp;&nbsp;&nbsp;&nbsp;
+                        <div class="card-header"><strong>ลงทะเบียนเข้าร่วมกิจกรรม</strong> &nbsp;&nbsp;&nbsp;&nbsp;
                         <a  class="btn btn-success mr-2 "href="{{ route('registers.create') }}" >ลงทะเบียน</a>
                     </div>
                 </div>

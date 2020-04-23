@@ -27,8 +27,4 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-// select * from `Registers`
-// inner join `Activity` on `Activity`.`id` = `Registers`.`id_activity`
-// inner join `Participants` on `Participants`.`id` = `Registers`.`id_Participants`
-// where `Activity`.`id` = `Registers`.`id_activity`
-// group by `Registers`.`id_activity`
+
