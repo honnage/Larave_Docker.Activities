@@ -34,18 +34,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/activity">{{ __('กิจกรรมที่จัด') }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/topic">{{ __('หัวข้อกิจกรรม') }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="">{{ __('ลงทะเบียนกิจกรรม') }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/participants">{{ __('ข้อมูลผู้ใช้') }}</a>
-                        </li>
+
                     </ul>
 
                     <!-- Right Side Of Navbar -->

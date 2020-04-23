@@ -95,10 +95,6 @@ class ActivityController extends Controller
     {
         $topictype = TopicTypeModel::orderBy('id')->get();
         $participants = ParticipantModel::orderBy('id')->get();
-        // $activity = DB::table("Activity")
-        // ->where('id','=',$id)
-        // ->get();
-        // return view('activity/edit',compact('activity','topictype','participants'));
 
         $activity = DB::table('Activity')
         ->join('TopicType','TopicType.id','=','Activity.id_TopicType')
@@ -155,7 +151,6 @@ class ActivityController extends Controller
     {
         $activity = ActivityModel::find($id);
         $activity->delete();
-        return redirect()
-        ->route('activity.index');
+        return redirect()->route('activity.index');
     }
 }

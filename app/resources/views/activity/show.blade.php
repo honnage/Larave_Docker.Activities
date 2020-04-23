@@ -7,14 +7,21 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
+
+
+
         <div class="card">
             <div class="card-header">รายละเอียดกิจกรรม &nbsp;&nbsp;
                 <a href="{{ route('activity.index') }}"> กิจกรรมทั้งหมด </a>&nbsp;&nbsp;
-                {{-- <a  class="btn btn-success mr-2 "
+                <a  class="btn btn-success mr-2 "
                     style="position:absolute ; right:0 ; top:5px"
                     href="{{ route('participants.create') }}" >เพิ่มรายชื่อ
-                </a> --}}
+                </a>
             </div>
+            {{-- <div class="card-header">
+                <h2>รายชื่อผู้ลงสอบ  <a  class="btn btn-success" style="text-align: right" href="{{ route('participants.create') }}" >เพิ่มข้อมูลผู้ลงสอบ 5555</a></h2>
+            </div> --}}
+
         @csrf
         <body {{--class="text-center"--}} style="">
         <div class="row">
