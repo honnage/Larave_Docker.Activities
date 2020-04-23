@@ -87,21 +87,6 @@ class RegisterController extends Controller
      */
     public function edit($id)
     {
-
-
-        // $registers = DB::table('Registers')
-        // ->join('Activity','Activity.id','=','Registers.id_activity')
-        // ->join('Participants','Participants.id','=','Registers.id_Participants')
-        // ->select('*',"Registers.id as RegisID",'Registers.status as statusRegis','Registers.created_at as RegisAt')
-        // // ->groupBy('Registers.id')
-        // // ->orderBy('Registers.id', 'DESC')
-        // // ->orderBy('Registers.id_activity')
-
-        // ->where('Registers.id' ,'=',$id)
-        // ->get();
-
-        // return view('registers.edit',compact('registers','register'));
-
         $activity = ActivityModel::orderBy('id')->get();
         $participants = ParticipantModel::orderBy('id')->get();
         $registers = DB::table('Registers')
@@ -116,8 +101,6 @@ class RegisterController extends Controller
         ->get();
 
         return view('registers.edit',compact('registers','activity','participants'));
-
-
     }
 
     /**
