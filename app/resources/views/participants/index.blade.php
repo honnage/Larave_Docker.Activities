@@ -9,13 +9,13 @@
                 <div class="form-inline ">
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <a class="btn btn-outline-secondary col-sm-2" style="background: #F9E54E; color: black" href="{{ route('activity.index') }}" >กิจกรรมที่จัด</a>
-                        <a class="btn btn-outline-secondary col-sm-2" style="background: #F8981D; color: cornsilk" href="{{ route('topic.index') }}" >หัวข้อประเภทงาน</a>
-                        <a class="btn btn-outline-secondary col-sm-2" style="background: #E12E4B; color: cornsilk" href="{{ route('registers.index') }}" >ลงทะเบียนเข้าร่วมกิจกรรม</a>
-                        <a class="btn btn-outline-secondary col-sm-2" style="background: #5BBDC8; color: cornsilk" href="{{ route('participants.index') }}" >ผู้เข้าร่วมกิจกรรม</a>
+                        <a class="btn btn-outline-secondary col-sm-2" style="background: #F8981D; color: white" href="{{ route('topic.index') }}" >หัวข้อประเภทงาน</a>
+                        <a class="btn btn-outline-secondary col-sm-2" style="background: #E12E4B; color: white" href="{{ route('registers.index') }}" >ลงทะเบียนเข้าร่วมกิจกรรม</a>
+                        <a class="btn btn-outline-secondary col-sm-2" style="background: #5BBDC8; color: white" href="{{ route('participants.index') }}" >ผู้เข้าร่วมกิจกรรม</a>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="card-header"><strong>รายชื่อผู้ลงทะเบียน </strong> &nbsp;&nbsp;&nbsp;&nbsp;
-                        <a  class="btn btn-success mr-2 "href="{{ route('registers.create') }}" >เพิ่มรายชื่อ</a>
+                        <a  class="btn btn-success mr-2 "href="{{ route('participants.create') }}" >เพิ่มรายชื่อ</a>
                     </div>
                 </div>
             </div>

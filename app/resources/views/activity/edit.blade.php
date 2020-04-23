@@ -30,8 +30,8 @@
                                     --ผู้จัดกิจกกรม-- {{$part->fname}}
                                 </option>
                             @else
-                                <option value = "{{$dormitory->id}}">
-                                    {{$part->fname}}
+                                <option value = "{{$part->id}}">
+                                    {{$part->fname}} &nbsp;&nbsp; {{$part->lname}}
                                 </option>
                             @endif
                             @endforeach
