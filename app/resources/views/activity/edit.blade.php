@@ -9,15 +9,13 @@
         <div class="card">
 
         <div class="table-responsive">
-            <div class="card-header">รายละเอียดกิจกรรม  &nbsp;&nbsp;
-                <a href="{{ route('activity.index') }}"> กิจกรรมทั้งหมด </a>&nbsp;&nbsp;
+            <div class="card-header">รายละเอียดกิจกรรม ID:{{$acti->ActiID}}  &nbsp;&nbsp;
+                <a href="{{ route('activity.index') }}"> รายชื่อทั้งหมด</a>&nbsp;&nbsp;
             </div>
 
-            <form action=" {{ route('activity.update',$acti->id) }} " method="post" >
-
+            <form action=" {{ route('activity.update',$acti->ActiID) }} " method="post" >
                 {{csrf_field()}}
                 @method('PUT')
-
 
                 <div class="form-group my-3">
                     <label >&nbsp; ชื่อผู้จัดกิจกกรม<label style="color:red;"> * </label></label>
@@ -26,11 +24,11 @@
                             @foreach($participants as $part)
 
                             @if ($part->id == $acti->id_Participants)
-                                <option selected value = "{{$part->id}}">
-                                    --ผู้จัดกิจกกรม-- {{$part->fname}}
+                                <option selected value = "{{$acti->id_Participants}}">
+                                    ชื่อปัจจุบัน: &nbsp;{{$part->fname}} &nbsp;&nbsp; {{$part->lname}}
                                 </option>
                             @else
-                                <option value = "{{$part->id}}">
+                                <option value = "{{$acti->id_Participants}}">
                                     {{$part->fname}} &nbsp;&nbsp; {{$part->lname}}
                                 </option>
                             @endif
@@ -50,7 +48,7 @@
                         <select class="form-control " name="id_TopicType">
                             <option value="{{$acti->id_TopicType}}" ><label style="color:brown" >ปัจุบันคือ: {{ $acti->name }}</label></option>
                             @foreach($topictype as $type)
-                            <option value = "{{$type->id}}">
+                            <option value = "{{$acti->id_TopicType}}">
                                 แก้ไขเป็น: {{$type->name}}
                             </option>
                             @endforeach
@@ -85,6 +83,8 @@
                     <label >&nbsp; เวลาเลิกกิจกกรม <label style="color:red;"> * </label></label>
                     <input type="time" class="form-control" name="Endtime" id="Endtime" placeholder="เวลาเลิกกิจกกรม " value="{{ $acti->Endtime }}">
                 </div>
+
+
 
 
 

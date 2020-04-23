@@ -99,7 +99,7 @@ class ActivityController extends Controller
         $activity = DB::table('Activity')
         ->join('TopicType','TopicType.id','=','Activity.id_TopicType')
         ->join('Participants','Participants.id','=','Activity.id_Participants')
-        ->select('*')
+        ->select('*',"Activity.id as ActiID")
         ->where('Activity.id' ,'=',$id)
         ->get();
         return view('activity.edit',compact('activity','topictype','participants'));
@@ -116,14 +116,14 @@ class ActivityController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'activity'=>'required',
-            'description'=>'required',
+            'activity'=>'required', //
+            'description'=>'required',//
             'number'=>'required',
             'EventDate'=>'required',
             'StartTime'=>'required',
             'Endtime'=>'required',
             'id_TopicType'=>'required',
-            'id_Participants'=>'required',
+            'id_Participants'=>'required', //
         ]);
             DB::table('Activity')
             ->where('id','=',$id)
@@ -138,6 +138,7 @@ class ActivityController extends Controller
             'id_Participants' => $request->id_Participants,
 
         ]);
+        // dd($request->id);
         return redirect('activity');
     }
 

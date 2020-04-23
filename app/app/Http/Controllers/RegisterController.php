@@ -91,8 +91,18 @@ class RegisterController extends Controller
         $participants = ParticipantModel::orderBy('id')->get();
         $registers = DB::table('Registers')
 
+        ->join('Activity','Activity.id','=','Registers.id_activity')
+        ->join('Participants','Participants.id','=','Registers.id_Participants')
+        ->select('*',"Registers.id as RegisID",'Registers.status as statusRegis','Registers.created_at as RegisAt')
+        // ->where('Activity.id' ,'=',$id)
+        // ->whereColumn('Activity.id','=','Registers.id_activity')
+        // ->whereColumn('Participants.id','=','Registers.id_Participants')
+        ->groupBy('Registers.id')
+        ->orderBy('Registers.id', 'DESC')
+
         ->where('Registers.id' ,'=',$id)
         ->get();
+
         return view('registers.edit',compact('registers','activity','participants'));
 
     }

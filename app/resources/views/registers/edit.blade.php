@@ -17,6 +17,11 @@
                 {{csrf_field()}}
                 @method('PUT')
 
+                <div class="form-group my-3">
+                    <label>&nbsp; ชื่อผู้เข้าร่วมกิจกรรม <label style="color:red;"> * </label></label>
+                    <input type="text" class="form-control" value = "{{ $regis->fname}} {{ $regis->lname}}" readonly>
+                </div>
+
 
                 <div class="form-group my-3">
                     <label>&nbsp; ชื่อกิจกรรม <label style="color:red;"> * </label></label>
