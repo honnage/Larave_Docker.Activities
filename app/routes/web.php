@@ -20,7 +20,8 @@ Route::resource('/registers', 'RegisterController');
 
 
 Route::get('/', function () {
-    return view('index');
+    return view('welcome');
+    // return view('index');
 });
 
 Auth::routes();

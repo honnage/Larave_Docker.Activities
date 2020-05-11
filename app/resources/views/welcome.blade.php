@@ -63,10 +63,10 @@
             }
         </style>
     </head>
-    <body>
-        <div class="flex-center position-ref full-height">
+    <body style="background: #DEEFEE ">
+        <div class="flex-center position-ref full-height" >
             @if (Route::has('login'))
-                <div class="top-right links">
+                <div class="top-right links" >
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
@@ -85,14 +85,11 @@
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="{{ route('activity.index') }}">กิจกรรมที่จัด</a>
+                    <a href="{{ route('topic.index') }}">หัวข้อประเภทงาน</a>
+                    <a href="{{ route('registers.index') }}">ลงทะเบียนเข้าร่วมกิจกรรม</a>
+                    <a href="{{ route('participants.index') }}">ผู้เข้าร่วมกิจกรรม</a>
+
                 </div>
             </div>
         </div>
